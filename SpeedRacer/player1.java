@@ -15,11 +15,19 @@ public class player1 extends Actor
     public void act()
     {
         if (Greenfoot.isKeyDown("up")){
-            if(getY() <150)
+            if (getY() > 140)
             setLocation(getX(),getY()-2);
         }
         if (Greenfoot.isKeyDown("down")){
+            if (getY() > 50)
             setLocation(getX(),getY()+2);
+        }
+        if (Greenfoot.isKeyDown("right")){
+            if (getX() < 450)
+            setLocation(getX()+2,getY());
+        }
+        if (Greenfoot.isKeyDown("left")){
+            setLocation(getX()-2,getY());
         }
     }
 }
