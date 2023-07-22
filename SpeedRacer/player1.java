@@ -12,22 +12,27 @@ public class player1 extends Actor
      * Act - do whatever the player1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    private int velocidad;
+    
+    public player1 (int v) {
+        velocidad = v;
+    }
     public void act()
     {
         if (Greenfoot.isKeyDown("up")){
             if (getY() > 140)
-            setLocation(getX(),getY()-2);
+            setLocation(getX(),getY()- velocidad);
         }
         if (Greenfoot.isKeyDown("down")){
             if (getY() > 50)
-            setLocation(getX(),getY()+2);
+            setLocation(getX(),getY()+ velocidad);
         }
         if (Greenfoot.isKeyDown("right")){
             if (getX() < 450)
-            setLocation(getX()+2,getY());
+            setLocation(getX()+ velocidad,getY());
         }
         if (Greenfoot.isKeyDown("left")){
-            setLocation(getX()-2,getY());
+            setLocation(getX()- velocidad,getY());
         }
     }
 }

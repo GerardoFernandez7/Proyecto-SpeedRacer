@@ -25,7 +25,5 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-        player1 player1 = new player1();
-        addObject(player1,95,183);
     }
 }
