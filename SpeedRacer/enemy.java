@@ -8,12 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class enemy extends Actor
 {
+    private int speed;
+    
+    public enemy(int v){
+        speed = v;
+    }
     /**
      * Act - do whatever the enemy wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        // Add your action code here.
+        
     }
 }

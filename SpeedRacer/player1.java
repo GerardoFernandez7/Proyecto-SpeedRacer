@@ -35,4 +35,12 @@ public class player1 extends Actor
             setLocation(getX()- velocidad,getY());
         }
     }
+    public void checkCollision(){
+        Actor collided = getOneIntersectingObject(enemy.class);
+        if(collided != null){
+            getWorld().removeObject(collided);
+            getWorld().removeObject(this);
+            Greenfoot.stop();
+        }
+    }
 }
