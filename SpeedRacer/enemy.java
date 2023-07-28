@@ -2,9 +2,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class enemy here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Esta clase es la encargada presentar y configurar los parametros de los
+ * enemigos
+ * @author (Gerardo Fernandez) 
+ * @version (27/7/23)
  */
 public class enemy extends Actor
 {
@@ -19,6 +20,10 @@ public class enemy extends Actor
      */
     public void act()
     {
-        
+        setLocation(getX() - speed, getY()); // Modifica ambas coordenadas para que el enemigo se mueva horizontalmente
+        if (getX() <= 0) { // Comprueba si ha llegado al borde derecho del mundo
+            MyWorld juego = (MyWorld) getWorld();
+            juego.removeObject(this);
+        }
     }
 }

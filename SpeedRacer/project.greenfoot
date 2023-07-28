@@ -2,8 +2,8 @@
 class.MyWorld.image=pista.png
 class.enemy.image=enemigo1.png
 class.player1.image=carro1-arriba.png
-dependency1.from=MyWorld
-dependency1.to=player1
+dependency1.from=player1
+dependency1.to=enemy
 dependency1.type=UsesDependency
 editor.fx.0.height=739
 editor.fx.0.width=816
