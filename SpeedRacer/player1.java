@@ -37,6 +37,7 @@ public class player1 extends Actor
             setLocation(getX()-velocidad,getY());
         }
         checkCollision();
+        Greenfoot.playSound("formula1racing.wav");
     }
 //choques
 public void checkCollision(){
