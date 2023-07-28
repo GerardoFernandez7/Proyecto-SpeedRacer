@@ -71,7 +71,7 @@ public class MyWorld extends World
     int carril=getRandomNumber(0,3);
     
     if (carril==0){
-    addObject(new enemy(velocidad),1260,246);
+    addObject(new enemy(velocidad),1260,300);
     
     }
     else if(carril==1){

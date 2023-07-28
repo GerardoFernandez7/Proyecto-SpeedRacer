@@ -46,6 +46,9 @@ Actor collided = getOneIntersectingObject(enemy.class);
     getWorld().removeObject(collided);
     getWorld().removeObject(this);
     Greenfoot.stop();
+    Greenfoot.setWorld(new GameOver());
+    
+    
 }
 }
 public void aumenta_velocidad(){
