@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class player1 extends Actor
 {
+    private GreenfootSound sound = new GreenfootSound("formula1racing.wav");
     private int velocidad;
     public player1(int v){
         velocidad = v;
@@ -24,7 +25,6 @@ public class player1 extends Actor
             setLocation(getX(),getY()-velocidad);
         }
         //movimiento abajo
-        //arreglar limite de abajo
         if (Greenfoot.isKeyDown("down")){
             if (getY()<425)
             setLocation(getX(),getY()+velocidad);
@@ -37,19 +37,20 @@ public class player1 extends Actor
             setLocation(getX()-velocidad,getY());
         }
         checkCollision();
-        Greenfoot.playSound("formula1racing.wav");
+        if (!sound.isPlaying()) {
+            // Reproduce el sonido en bucle
+            sound.playLoop();
+        }
     }
-//choques
-public void checkCollision(){
-Actor collided = getOneIntersectingObject(enemy.class);
+    //choques
+    public void checkCollision(){
+    Actor collided = getOneIntersectingObject(enemy.class);
     if (collided!=null){
     getWorld().removeObject(collided);
     getWorld().removeObject(this);
     Greenfoot.stop();
     Greenfoot.setWorld(new GameOver());
-    
-    
-}
+    }
 }
 public void aumenta_velocidad(){
 velocidad++;

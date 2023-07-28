@@ -15,6 +15,7 @@ public class MyWorld extends World
     private int dificultad;
     private player1 jugador1;
     private int num_enemy;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
