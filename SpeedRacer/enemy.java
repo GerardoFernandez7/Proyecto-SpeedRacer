@@ -19,19 +19,12 @@ public class enemy extends Actor
     public void act()
     {
         setLocation(getX()-velocidad,getY());
-        if(getX()>=612){
+        if(getX()<=0){
         MyWorld juego = (MyWorld) getWorld();
         juego.removeObject(this);
-    }
-    Actor player1;
-    player1 = getOneObjectAtOffset(0,0, player1.class);
-    if (player1!=null){
-    World world;
-    world = getWorld();
-    world.removeObject(player1);
-    world.removeObject(this);
-    
-    
+        
+        juego.disminuir_enemy();
+        juego.aumentar_adelantamiento();
     }
     }
 }

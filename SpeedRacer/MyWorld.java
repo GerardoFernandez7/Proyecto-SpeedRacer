@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    private int level;
     private int velocidad;
     private int adelantamientos;
     private int dificultad;
@@ -27,9 +27,10 @@ public class MyWorld extends World
         dificultad=4;
         velocidad=2;
         
-
+        
+        
         jugador1=new player1(velocidad);
-        addObject(jugador1,100,190);
+        addObject(jugador1,40,350);
         
         
     }
@@ -56,29 +57,44 @@ public class MyWorld extends World
     if(adelantamientos==dificultad){
     adelantamientos=0;
     dificultad=dificultad+2;
+    velocidad++;
     jugador1.aumenta_velocidad();
         }
     }
     
     public void add_enemy(){
     if(num_enemy==0){
-    int carril=getRandomNumber(0,2);
+    int carril=getRandomNumber(0,3);
     
     if (carril==0){
-    addObject(new enemy(velocidad),600,145);
-    num_enemy++;
+    addObject(new enemy(velocidad),1260,300);
+    
     }
     else if(carril==1){
-        addObject(new enemy(velocidad),600,180);
-        num_enemy++;
+        addObject(new enemy(velocidad),1260,350);
+        
     }
-    else if(carril==2){
-    addObject(new enemy(velocidad),600,220);
-    num_enemy++;
+    else{
+    addObject(new enemy(velocidad),1260,400);
+    
     }
     carril++;
     carril=carril%3;
+    
+    if (carril==0){
+    addObject(new enemy(velocidad),1260,300);
+    
     }
+    else if(carril==1){
+        addObject(new enemy(velocidad),1260,350);
+        
+    }
+    else{
+    addObject(new enemy(velocidad),1260,400);
+    
+            }
+    num_enemy=2;
+        }
     }
     
 }
