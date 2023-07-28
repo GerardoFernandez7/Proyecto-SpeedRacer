@@ -43,4 +43,7 @@ public class player1 extends Actor
             Greenfoot.stop();
         }
     }
+    public void aumenta_velocidad(){
+        velocidad++;
+        }
 }
