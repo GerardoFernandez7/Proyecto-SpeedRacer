@@ -20,21 +20,20 @@ public class player1 extends Actor
     {
         //movimiento arriba
         if (Greenfoot.isKeyDown("up")){
-            if(getY()>250)
+            if(getY()>280)
             setLocation(getX(),getY()-velocidad);
         }
         //movimiento abajo
         //arreglar limite de abajo
         if (Greenfoot.isKeyDown("down")){
-            if (getY()<470)
+            if (getY()<425)
             setLocation(getX(),getY()+velocidad);
         }
         if (Greenfoot.isKeyDown("right")){
-            if(getX()<1230)
+            if(getX()<950)
             setLocation(getX()+velocidad,getY());
         }
         if (Greenfoot.isKeyDown("left")){
-            if (getX()>75)
             setLocation(getX()-velocidad,getY());
         }
         checkCollision();

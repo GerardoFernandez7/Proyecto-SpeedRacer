@@ -22,7 +22,7 @@ public class enemy extends Actor
         if(getX()<=0){
         MyWorld juego = (MyWorld) getWorld();
         juego.removeObject(this);
-        
+        juego.aumentar_puntuacion(10);
         juego.disminuir_enemy();
         juego.aumentar_adelantamiento();
     }

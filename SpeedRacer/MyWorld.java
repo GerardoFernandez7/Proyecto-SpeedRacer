@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
+    private counter score;
     private int level;
     private int velocidad;
     private int adelantamientos;
@@ -27,12 +28,11 @@ public class MyWorld extends World
         dificultad=4;
         velocidad=2;
         
-        
-        
+        score = new counter("");
         jugador1=new player1(velocidad);
-        addObject(jugador1,40,350);
         
-        
+        addObject(jugador1,40,350);   
+        addObject(score, 250, 40); 
     }
     
     public void act(){
@@ -43,6 +43,10 @@ public class MyWorld extends World
     public int getRandomNumber(int start, int end){
     int normal= Greenfoot.getRandomNumber(end-start+1);
     return normal+start;
+    }
+    
+    public void aumentar_puntuacion(int valor){
+        score.add(valor);
     }
     
     public void aumentar_adelantamiento(){
@@ -67,7 +71,7 @@ public class MyWorld extends World
     int carril=getRandomNumber(0,3);
     
     if (carril==0){
-    addObject(new enemy(velocidad),1260,300);
+    addObject(new enemy(velocidad),1260,246);
     
     }
     else if(carril==1){
@@ -75,14 +79,13 @@ public class MyWorld extends World
         
     }
     else{
-    addObject(new enemy(velocidad),1260,400);
+    addObject(new enemy(velocidad),1260,417);
     
     }
     carril++;
     carril=carril%3;
-    
     if (carril==0){
-    addObject(new enemy(velocidad),1260,300);
+    addObject(new enemy(velocidad),1260,246);
     
     }
     else if(carril==1){
@@ -90,7 +93,7 @@ public class MyWorld extends World
         
     }
     else{
-    addObject(new enemy(velocidad),1260,400);
+    addObject(new enemy(velocidad),1260,417);
     
             }
     num_enemy=2;
